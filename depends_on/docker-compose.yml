@@ -1,0 +1,23 @@
+version: "3"
+services:
+  t1:
+    image: docker-dep-test1
+    build:
+      context: test1
+    depends_on:
+      - t2
+  t2:
+    image: docker-dep-test2
+    build:
+      context: test2
+    depends_on:
+      - t3
+      - t4
+  t3:
+    image: docker-dep-test3
+    build:
+      context: test3
+  t4:
+    image: docker-dep-test4
+    build:
+      context: test4
